@@ -41,11 +41,11 @@ class MotorDriver():
         self.ENA.high()
 
         if duty>0:
-            print('Duty positive')
+#             print('Duty positive')
             self.timchan1.pulse_width_percent(duty)
             self.timchan2.pulse_width_percent(0)
         elif duty<=0:
-            print('Duty negative')
+#             print('Duty negative')
             self.timchan1.pulse_width_percent(0)
             self.timchan2.pulse_width_percent(abs(duty))
 
@@ -53,9 +53,9 @@ if __name__ == '__main__':
     '''@brief   testing block
     '''
     
-#     ENA = pyb.Pin (pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
-#     IN1 = pyb.Pin (pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
-#     IN2 = pyb.Pin (pyb.Pin.board.PB5, pyb.Pin.OUT_PP) #motor port A pins
-#     tim3 = pyb.Timer (3, freq=20000)
-#     mot1 = MotorDriver(ENA, IN1, IN2, tim3)
-#     mot1.set_duty(50)
+    ENA = pyb.Pin (pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
+    IN1 = pyb.Pin (pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
+    IN2 = pyb.Pin (pyb.Pin.board.PB5, pyb.Pin.OUT_PP) #motor port A pins
+    tim3 = pyb.Timer (3, freq=20000)
+    mot1 = MotorDriver(ENA, IN1, IN2, tim3)
+    mot1.set_duty(50)

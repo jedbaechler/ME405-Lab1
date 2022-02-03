@@ -19,13 +19,14 @@ class EncoderReader:
        @details     saves last value of each cycle to be added or subtracted
        '''
        
-    current_position = 0
-    delta = 0
+    
 
     def __init__(self, enc_number):
         '''@brief      instantiates encoder objects
            @details    we know the encoder pins, so user can just select encoders
            '''
+        self.current_position = 0
+        self.delta = 0
         
 
         
@@ -66,7 +67,7 @@ class EncoderReader:
         '''@brief       zeroes encoder position
         '''
         
-        current_position = 0
+        self.current_position = 0
         
 if __name__ == "__main__":
     '''@brief    testing block for encoder-motor pair
